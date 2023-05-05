@@ -29,6 +29,13 @@ app.get('/', async(req, res) => {
   });
 });
 
+app.get('/photos/:id', async(req, res) => {
+  const post = await Photo.findById(req.params.id)
+  res.render('post',{ //photo yazan kısım photo.ejs sayfasını temsil eder
+    post
+  })
+});
+
 app.get('/about', (req, res) => {
   res.render('about');
 });
