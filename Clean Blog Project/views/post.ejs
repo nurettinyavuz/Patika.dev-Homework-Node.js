@@ -15,7 +15,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1><%= post.title %></h1>
-            <h2 class="subheading"><%=  post.description %></h2>
+            <h2 class="subheading"><%= post.description %></h2>
             <span class="meta">
               <a href="#"><%= post.dateCreated.toLocaleDateString() %></span>
           </div>
@@ -63,8 +63,16 @@
           <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
 
           <p>Placeholder text by
-            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
-            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+            <div class="tm-bg-gray tm-share-box">
+              <div class="text-center">
+                <!-- Burada href yazmamızın nedeni edit butonuna bastığımız zaman o sayfanın yolunu gösterdik "Link kısmında da bu yol gözükecek yani"
+                sayfanın sağ altında da bu yol gözüküyor -->
+                <a href="/photos/edit/<%= photo._id %>" class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Update Details</span></a>	
+              </div>	
+              <div class="text-center">
+                <a href="/photos/<%= photo._id %>?_method=DELETE" class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download" onclick="return confirm('ARE YOU SURE?')"><span>Delete Photo</span></a>	
+              </div>								
+            </div>
         </div>
       </div>
     </div>

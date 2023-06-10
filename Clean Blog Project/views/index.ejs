@@ -33,7 +33,7 @@
                 <%= photos[i].title %>
               </h2>
               <h3 class="post-subtitle">
-                <%= photos[i].description %>
+                <%= photos[i].description.length >40 ? photos[i].description.substring(0, 100)+ "..." :photos[i].description %>
               </h3>
               <h6 class="post-subtitle">
                 <%= photos[i].dateCreated.toLocaleDateString() %>
